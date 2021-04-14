@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Test Application]">
+  <test thread-count="5" name="Workflow(failed)">
+    <classes>
+      <class name="test.Test1">
+        <methods>
+          <include name="afterMethod"/>
+          <include name="beforeMethod"/>
+          <include name="beforeClass"/>
+          <include name="teardown"/>
+          <include name="searchStores"/>
+        </methods>
+      </class> <!-- test.Test1 -->
+    </classes>
+  </test> <!-- Workflow(failed) -->
+</suite> <!-- Failed suite [Test Application] -->

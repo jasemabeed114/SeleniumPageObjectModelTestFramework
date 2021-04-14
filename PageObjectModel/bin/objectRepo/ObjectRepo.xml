@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<home>
+	<shopByDepartment>//button[@id='showByDepartmentCaret']</shopByDepartment>
+	<departmentJewelry>//div[@id='mainNavigation']//a/span[text()='jewelry']</departmentJewelry>
+	<departmentWomen>//div[@id='mainNavigation']//a/span[text()='women']</departmentWomen>
+	<departmentWomenActiveWear>//div[@class='flexLabelLinksContainer']//a[@href='/shop/womens-clothing/womens-activewear?id=29891&amp;cm_sp=us_hdr-_-women-_-29891_activewear_COL1']</departmentWomenActiveWear>
+	<departmentMen>//div[@id='mainNavigation']//a/span[text()='men']</departmentMen>
+	<departmentMenNewArrivals>//div[@class='flexLabelLinksContainer']//a[@href='/shop/mens-clothing/new-arrivals?id=302556&amp;cm_sp=us_hdr-_-men-_-302556_new-arrivals_COL1']</departmentMenNewArrivals>
+	<linkStores>//a[@title='Stores']</linkStores>
+	<linkDeals>//a[@title='Deals']</linkDeals>
+	<inputSearchStore>//div[@class='Locator-searchBox']/descendant::input[@name ='q' and @id='q']</inputSearchStore>
+	<searchStoreButton>//div[@class='Locator-searchBar']/descendant::button[@type='submit' and @class='search-button Locator-bigButton Button-primary']</searchStoreButton>
+	<searchStoreDropDown>//div[@class='pac-item']/descendant::span[@class='pac-item-query']</searchStoreDropDown>
+	<searchStoreResult>//div[@class='Locator-resultsSummary']//span[contains(text(),'result')]</searchStoreResult>
+	
+</home>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="2" name="Failed suite [Test Application Workflow]">
+  <test thread-count="2" name="ChromeWorkflow(failed)">
+    <parameter name="browser" value="Chrome"/>
+    <classes>
+      <class name="testcases.TestA">
+        <methods>
+          <include name="pickUpPageNavigation"/>
+        </methods>
+      </class> <!-- testcases.TestA -->
+    </classes>
+  </test> <!-- ChromeWorkflow(failed) -->
+  <test thread-count="2" name="IEWorkflow(failed)">
+    <parameter name="browser" value="InternetExplorer"/>
+    <classes>
+      <class name="testcases.TestA">
+        <methods>
+          <include name="pickUpPageNavigation"/>
+        </methods>
+      </class> <!-- testcases.TestA -->
+    </classes>
+  </test> <!-- IEWorkflow(failed) -->
+</suite> <!-- Failed suite [Test Application Workflow] -->

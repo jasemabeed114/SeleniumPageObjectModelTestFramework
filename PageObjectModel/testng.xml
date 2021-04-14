@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Test Application Workflow" thread-count="2" >
+     <test name="ChromeWorkflow">
+    <parameter name="browser" value ="Chrome" />
+         <packages>
+             <package name="testcases"/>
+          </packages>
+     </test> 
+     <test name="IEWorkflow">
+    <parameter name="browser" value ="InternetExplorer" />
+          <packages>
+             <package name="testcases"/>
+          </packages> 
+     </test> <!-- Test -->
+</suite> <!-- Suite -->

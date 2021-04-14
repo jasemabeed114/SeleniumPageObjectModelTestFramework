@@ -1,0 +1,90 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>TestAutomationFramework</groupId>
+  <artifactId>TestAutomationFramework</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <build>
+    <sourceDirectory>src</sourceDirectory>
+    <resources>
+      <resource>
+        <directory>src</directory>
+        <excludes>
+          <exclude>**/*.java</exclude>
+        </excludes>
+      </resource>
+    </resources>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+        <configuration>
+          <release>15</release>
+        </configuration>
+      </plugin>
+      <plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-surefire-plugin</artifactId>
+			<version>2.19.1</version>
+			<configuration>
+			<argLine>
+                    -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+                </argLine>
+                <systemPropertyVariables>
+						<allure.results.directory>${project.build.directory}/allure-results</allure.results.directory>
+					</systemPropertyVariables>
+				<suiteXmlFiles>
+					<!-- TestNG suite XML files -->
+					<suiteXmlFile>testng.xml</suiteXmlFile>
+				</suiteXmlFiles>
+			</configuration>
+		</plugin>
+		
+    </plugins>
+  </build>
+  <dependencies>
+  <dependency>
+   	<groupId>org.testng</groupId>
+      	<artifactId>testng</artifactId>
+      	<version>6.9.10</version>
+      	
+	</dependency>
+	<dependency>
+		<groupId>org.seleniumhq.selenium</groupId>
+		<artifactId>selenium-java</artifactId>
+		<version>3.141.59</version>
+	</dependency>
+	
+	<dependency>
+    	<groupId>io.github.bonigarcia</groupId>
+   		 <artifactId>webdrivermanager</artifactId>
+   		 <version>4.3.1</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-testng -->
+	<dependency>
+    	<groupId>io.qameta.allure</groupId>
+   		 <artifactId>allure-testng</artifactId>
+    	<version>2.13.8</version>
+	</dependency>
+	
+	<dependency>
+    <groupId>org.slf4j</groupId>
+    <artifactId>slf4j-api</artifactId>
+    <version>1.7.30</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-jdk14 -->
+	<dependency>
+    	<groupId>org.slf4j</groupId>
+    	<artifactId>slf4j-jdk14</artifactId>
+    	<version>1.7.30</version>
+    	<scope>test</scope>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/ru.yandex.qatools.allure/allure-report-builder -->
+	<dependency>
+    	<groupId>ru.yandex.qatools.allure</groupId>
+    	<artifactId>allure-report-builder</artifactId>
+    	<version>2.1</version>
+	</dependency>
+	
+	</dependencies>
+</project>
