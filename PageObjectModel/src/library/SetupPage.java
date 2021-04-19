@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.log4j.xml.DOMConfigurator;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
@@ -12,13 +13,18 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
  * browserSelection() - takes browser choice as input and intializes that browser
  * initialSetupPage() - will set properties from config.properties 
  */
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
+
+import pages.HomePageHeader;
+import pages.PickUpDelivery;
 
 public class SetupPage {
 	
 	public static WebDriver driver;
 	public static Properties CONFIG =null;
 	public static String test_url =null;
-	//public static String testDataPath;
 	public static String wkSheetName;
 	
 	
@@ -56,5 +62,26 @@ public class SetupPage {
 		}
 		
 	}
+	
+	
+	@BeforeClass
+	@Parameters("browser")
+    public static void beforeClass(String browser) throws Exception { 
+  	  try {
+  		  	DOMConfigurator.configure("src/log4j.xml");
+  		  	SetupPage.browserSelection(browser);
+  		  	SetupPage.initialSetupPage();  
+  		  	new HomePageHeader(driver) ;
+  		  	new PickUpDelivery(driver) ;
+  	  }catch(Exception e) {
+  		  return;
+  	  }
+    }
+	
+	
+	@AfterClass(alwaysRun=true)
+	  public static void teardown() {
+		  driver.quit();
+	    }
 
 }

@@ -2,13 +2,13 @@ package testcases;
 
 import org.apache.log4j.Logger;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+//import org.testng.annotations.AfterClass;
+//import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
-import org.testng.annotations.Parameters;
+//import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import org.apache.log4j.LogManager;
-import org.apache.log4j.xml.DOMConfigurator;
+//import org.apache.log4j.xml.DOMConfigurator;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
@@ -28,7 +28,6 @@ public class Test1 extends SetupPage {
 		  @Severity(SeverityLevel.BLOCKER)
 		  public void homePageHeader() throws Exception {
 			  try {
-				  
 				  String homePagetitle=Common.validatePageTitle();
 				  Assert.assertEquals(homePagetitle, "Walmart.com | Save Money. Live Better.");			  
 				  HomePageHeader.getMenuDropDown().click();
@@ -47,24 +46,5 @@ public class Test1 extends SetupPage {
 			  }
 		  }
 
-		    @BeforeClass
-			@Parameters("browser")
-		    public static void beforeClass(String browser) throws Exception { 
-		  	  try {
-		  		
-		  		  	DOMConfigurator.configure("src/log4j.xml");
-		  		  	SetupPage.browserSelection(browser);
-		  		  	SetupPage.initialSetupPage();
-		  		  	new HomePageHeader(driver) ;
-		  	  
-		  	  }catch(Exception e) {
-		  		  return;
-		  	  }
-		    }
-		  @AfterClass(alwaysRun=true)
-		  public static void teardown() {
-			  driver.quit();
-		    }
-	
-		  
+		    
 }

@@ -2,11 +2,11 @@ package testcases;
 
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
-import org.apache.log4j.xml.DOMConfigurator;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+//import org.apache.log4j.xml.DOMConfigurator;
+//import org.testng.annotations.AfterClass;
+//import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
-import org.testng.annotations.Parameters;
+//import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
@@ -26,7 +26,6 @@ public class TestA extends SetupPage{
 		@Severity(SeverityLevel.NORMAL)
 		@SuppressWarnings("unused")
 		public void pickUpPageNavigation() {
-		    
 			boolean status;
 			PickUpDelivery.getPickUpDelivery().click();
 			status=WindowHandle.getWindowHandle();
@@ -38,23 +37,7 @@ public class TestA extends SetupPage{
 			}
 		}
 	
-		@BeforeClass
-		@Parameters("browser")
-	    public static void beforeClass(String browser) throws Exception { 
-	  	  try {
-	  		
-	  		  	DOMConfigurator.configure("src/log4j.xml");
-	  		  	SetupPage.browserSelection(browser);
-	  		  	SetupPage.initialSetupPage();
-	  		  	new PickUpDelivery(driver) ;
-	  	  
-	  	  }catch(Exception e) {
-	  		  return;
-	  	  }
-	    }
-	  @AfterClass(alwaysRun=true)
-	  public static void teardown() {
-		  driver.quit();
-	    }
+		
+	 
 	  
 }
